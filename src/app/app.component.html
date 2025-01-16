@@ -1,6 +1,12 @@
 <h1>Liste des médecins</h1>
+<form class="filter" (ngSubmit)="searchDoctor()">
+  <input type="search" [formControl]="searchDoctorControl" placeholder="nom du médecin">
+  <button type="submit">Rechercher</button>
+</form>
+Il y a {{filteredMedecins.length}} médecins.
 <div class="doctors">
-  @for (medecin of medecins; track $index) {
+  @for (medecin of filteredMedecins; track $index) {
     <app-doctor [doctor]="medecin"></app-doctor>
+    
   }
 </div>

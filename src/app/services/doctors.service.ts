@@ -10,6 +10,6 @@ export class DoctorsService {
   httpClient = inject(HttpClient);
 
   getDoctors(): Observable<Medecin[]> {
-    return this.httpClient.get<Medecin[]>('assets/medecins.json');
+    return this.httpClient.get<Medecin[]>('http://localhost:8080/restGSB/medecins?nom=');
   }
 }
